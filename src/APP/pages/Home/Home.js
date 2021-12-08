@@ -1,13 +1,13 @@
 import { useState,useContext } from "react";
-import styles from "./Home.css";
-import {ConventionContext } from "../../util/ConverstionContext";
+import styles from "./Home.module.css";
+import Blog from "../../components/Blog/Blog"
 
 const Home = () => {
- const {test,setTest} = useContext(ConventionContext);
+
 
   return (
     <div>
-     
+     <Blog/>
     </div>
   );
 };

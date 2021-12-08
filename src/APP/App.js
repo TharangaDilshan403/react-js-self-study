@@ -8,7 +8,7 @@ function App() {
     <ConventionContextProvider>
     <div className="App">
       <NavBar />
-      <div className="content">
+      <div>
         <Home />
       </div>
     </div>
