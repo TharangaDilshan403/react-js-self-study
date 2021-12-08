@@ -3,19 +3,20 @@ import BlogData from "../data/BlogData";
 
 export const ConventionContext = createContext();
 
-export const ConventionContextProvider = ({children}) => {
-  const [blogData, setBlogData] = useState(BlogData);
+export const ConventionContextProvider = ({ children }) => {
+  const [blogData, setBlogData] = useState(null);
   const [test, setTest] = useState("hello");
 
   const ContextValue = {
     blogData,
     setBlogData,
-    test, setTest
+    test,
+    setTest,
   };
 
-  return(
-  <ConventionContext.Provider value={ContextValue}>
-   {children}
-  </ConventionContext.Provider>
-  )
+  return (
+    <ConventionContext.Provider value={ContextValue}>
+      {children}
+    </ConventionContext.Provider>
+  );
 };
