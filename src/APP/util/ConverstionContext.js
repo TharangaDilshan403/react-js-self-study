@@ -1,5 +1,4 @@
 import { useState, createContext } from "react";
-import BlogData from "../data/BlogData";
 
 export const ConventionContext = createContext();
 

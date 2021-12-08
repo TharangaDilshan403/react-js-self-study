@@ -1,5 +1,5 @@
-import { useEffect, useContext, useState } from "react";
-import styles from "./Home.module.css";
+
+// import styles from "./Home.module.css";
 
 import BlogList from "../../components/blogList/BlogList";
 import Loading from "../../components/loading/Loading";
