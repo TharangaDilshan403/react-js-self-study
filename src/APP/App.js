@@ -1,17 +1,23 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { ConventionContextProvider } from "./util/ConverstionContext";
+
 import NavBar from "./components/NavBar/Navbar";
 import Home from "./pages/Home/Home";
-
-import {ConventionContextProvider} from "./util/ConverstionContext"
-
+import CreateArticle from "./pages/CreateArticle/CreateArticle";
 function App() {
   return (
     <ConventionContextProvider>
-    <div className="App">
-      <NavBar />
-      <div>
-        <Home />
-      </div>
-    </div>
+      <>
+        <Router>
+          <NavBar />
+
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/createArticle" element={<CreateArticle />} />
+            
+          </Routes>
+        </Router>
+      </>
     </ConventionContextProvider>
   );
 }

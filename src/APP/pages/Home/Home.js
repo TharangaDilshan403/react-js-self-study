@@ -1,31 +1,21 @@
 import { useEffect, useContext, useState } from "react";
 import styles from "./Home.module.css";
-import Blog from "../../components/Blog/Blog";
-import Loading from "../../components/Loading/Loading";
 
-import { ConventionContext } from "../../util/ConverstionContext";
+import BlogList from "../../components/blogList/BlogList";
+import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
+
+import useFetch from "../../API/useFetch";
 
 const Home = () => {
-  const { blogData, setBlogData } = useContext(ConventionContext);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("http://localhost:8000/blogs")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setBlogData(data);
-        setLoading(false);
-      });
-  }, []);
-
+  const { blogData, loading, error } = useFetch("http://localhost:8000/blogs");
+  
   return (
     <>
-      <div>
-        {loading && <Loading />}
-        {blogData && <Blog />}
-      </div>
+      {loading && <Loading />}
+      {error && <Error />}
+      <div>{blogData && <BlogList />}</div>
     </>
   );
 };

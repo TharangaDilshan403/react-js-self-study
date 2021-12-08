@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "./Blog.css";
+import "./blogList.css";
 import { ConventionContext } from "../../util/ConverstionContext";
 import colors from "../../constants/colors";
 
@@ -7,7 +7,7 @@ const Blog = () => {
   const { blogData, setBlogData } = useContext(ConventionContext);
 
   const handleDelete = (id) => {
-    const newBlog = blogData.filter(blogData=>(blogData.id != id))
+    const newBlog = blogData.filter((blogData)=>(blogData.id != id))
     setBlogData(newBlog)
   };
 
