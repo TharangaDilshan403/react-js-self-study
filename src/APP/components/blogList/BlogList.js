@@ -7,11 +7,6 @@ import { ConventionContext } from "../../util/ConverstionContext";
 const Blog = () => {
   const { data, setData } = useContext(ConventionContext);
 
-  // const handleDelete = (id) => {
-  //   const newBlog = data.filter((data) => data.id !== id);
-  //   setData(newBlog);
-  // };
-
   return (
     <div>
       {data.map((data) => (
@@ -20,7 +15,6 @@ const Blog = () => {
             <h2>{data.title}</h2>
             <p>Writen by {data.author}</p>
           </Link>
-          {/* <button onClick={() => handleDelete(data.id)}>Delete</button> */}
         </div>
       ))}
     </div>

@@ -12,12 +12,21 @@ const Article = () => {
     error,
   } = useFetch("http://localhost:8000/blogs/" + id);
 
+  const handleDelete = () => {
+    fetch("http://localhost:8000/blogs/" + id, {
+      method: "DELETE",
+    }).then(() => {
+      console.log("delete");
+    });
+  };
+
   return (
     <div>
       {loading && <Loading />}
       {error && <Error />}
       {article && <h2>{article.body}</h2>}
-      
+
+      <button onClick={handleDelete}>DELETE</button>
     </div>
   );
 };

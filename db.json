@@ -1,22 +1,31 @@
 {
   "blogs": [
     {
-      "title": "My new website",
-      "body": "lorem ipsum...",
-      "author": "mario",
-      "id": 1
-    },
-    {
-      "title": "Welcome party!",
-      "body": "lorem ipsum...",
-      "author": "yoshi",
-      "id": 2
-    },
-    {
       "title": "Web dev top tips",
       "body": "lorem ipsum...",
       "author": "mario",
       "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "title": "xsax",
+      "body": "xsaxsa",
+      "author": "mario",
+      "id": 7
+    },
+    {
+      "title": "gfg",
+      "body": "gregreg",
+      "author": "mario",
+      "id": 8
     }
   ]
 }
