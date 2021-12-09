@@ -3,7 +3,7 @@ import {ConventionContext} from "../util/ConverstionContext"
 
 const useFetch = (url) => {
 
-  const { blogData, setBlogData } = useContext(ConventionContext);
+  const { data, setData } = useContext(ConventionContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -13,7 +13,7 @@ const useFetch = (url) => {
         return res.json();
       })
       .then((data) => {
-        setBlogData(data);
+        setData(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -22,7 +22,7 @@ const useFetch = (url) => {
       });
   }, [url]);
 
-  return {blogData,loading,error}
+  return {data,loading,error}
 };
 
 export default useFetch;

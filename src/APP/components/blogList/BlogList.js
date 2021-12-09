@@ -3,23 +3,24 @@ import { Link } from "react-router-dom";
 import "./blogList.css";
 import { ConventionContext } from "../../util/ConverstionContext";
 
-const Blog = () => {
-  const { blogData, setBlogData } = useContext(ConventionContext);
 
-  const handleDelete = (id) => {
-    const newBlog = blogData.filter((blogData) => blogData.id !== id);
-    setBlogData(newBlog);
-  };
+const Blog = () => {
+  const { data, setData } = useContext(ConventionContext);
+
+  // const handleDelete = (id) => {
+  //   const newBlog = data.filter((data) => data.id !== id);
+  //   setData(newBlog);
+  // };
 
   return (
     <div>
-      {blogData.map((blogData) => (
-        <div className="blog-preview" key={blogData.id}>
-          <Link to={`/article/${blogData.id}`}>
-            <h2>{blogData.title}</h2>
-            <p>Writen by {blogData.author}</p>
+      {data.map((data) => (
+        <div className="blog-preview" key={data.id}>
+          <Link to={`/article/${data.id}`}>
+            <h2>{data.title}</h2>
+            <p>Writen by {data.author}</p>
           </Link>
-          <button onClick={() => handleDelete(blogData.id)}>Delete</button>
+          {/* <button onClick={() => handleDelete(data.id)}>Delete</button> */}
         </div>
       ))}
     </div>

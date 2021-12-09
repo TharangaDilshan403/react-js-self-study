@@ -3,12 +3,12 @@ import { useState, createContext } from "react";
 export const ConventionContext = createContext();
 
 export const ConventionContextProvider = ({ children }) => {
-  const [blogData, setBlogData] = useState(null);
+  const [data, setData] = useState(null);
   const [test, setTest] = useState("hello");
 
   const ContextValue = {
-    blogData,
-    setBlogData,
+    data,
+    setData,
     test,
     setTest,
   };
