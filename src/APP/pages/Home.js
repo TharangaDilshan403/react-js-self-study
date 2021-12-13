@@ -7,6 +7,7 @@ import Error from "../components/error/Error";
 import useFetch from "../API/useFetch";
 
 const Home = () => {
+
   const {
     data: blogData,
     loading,
@@ -16,8 +17,8 @@ const Home = () => {
   return (
     <>
       {loading && <Loading />}
-      {error && <Error />}
-      <div>{blogData && <BlogList />}</div>
+      {error && <Error/>}
+      {blogData &&  <BlogList loading={loading} error={error}/>}
     </>
   );
 };

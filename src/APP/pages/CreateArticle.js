@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 const CreateArticle = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("mario");
+  const [author, setAuthor] = useState("");
   const navigation = useNavigate();
 
   const handleSubmit = (e) => {
@@ -40,10 +40,16 @@ const CreateArticle = () => {
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
         <label>Blog author:</label>
-        <select value={author} onChange={(e) => setAuthor(e.target.value)}>
+        {/* <select value={author} onChange={(e) => setAuthor(e.target.value)}>
           <option value="mario">mario</option>
           <option value="yoshi">yoshi</option>
-        </select>
+        </select> */}
+         <input
+          type="text"
+          required
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
         <button>Add Blog</button>
       </form>
     </div>

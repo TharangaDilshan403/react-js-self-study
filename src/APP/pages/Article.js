@@ -1,10 +1,12 @@
 import { useParams } from "react-router";
 import useFetch from "../API/useFetch";
+import { useNavigate } from "react-router-dom";
 import Error from "../components/error/Error";
 import Loading from "../components/loading/Loading";
 
 const Article = () => {
   const { id } = useParams();
+  const navigation=useNavigate()
 
   const {
     data: article,
@@ -17,16 +19,19 @@ const Article = () => {
       method: "DELETE",
     }).then(() => {
       console.log("delete");
+      navigation("/")
     });
   };
 
   return (
     <div>
-      {loading && <Loading />}
+      {loading && <Loading/>}
       {error && <Error />}
-      {article && <h2>{article.body}</h2>}
-
-      <button onClick={handleDelete}>DELETE</button>
+      {article && (
+        <div>
+          <h2>{article.body}</h2> <button onClick={handleDelete}>DELETE</button>
+        </div>
+      )}
     </div>
   );
 };
